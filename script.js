@@ -16,23 +16,27 @@ var time = moment().format("dddd, MMMM Do YYYY, h:mm:ss p");
 var displayTime = document.getElementById('currentDay');
 displayTime.textContent = time
 
-$(function() {
-$(".container").before("<div>Row1</div>");
-$(".container").before("<div>Row2</div>");
-$(".container").before("<div>Row3</div>");
-$(".container").before("<div>Row4</div>");
-$(".container").before("<div>Row5</div>");
-$(".container").before("<div>Row6</div>");
-$(".container").before("<div>Row7</div>");
-$(".container").after("<div>Row8</div>");
+function putDiv() {
+    var div1 = $("<div></div>").text("row");
+    $(".container").after(div1);
+}
 
-});
+// $(function() {
+// $(".container").before("<div>Row1</div>");
+//     $("div").attr("class", "hour");
+//     $("div").attr("class", "row");
+//     $("div").attr("class", "time-block");
+    // $("div").attr("class", "col-md-10");
+// $(".container").before("<div>Row2</div>");
+// $(".container").before("<div>Row3</div>");
+// $(".container").before("<div>Row4</div>");
+// $(".container").before("<div>Row5</div>");
+// $(".container").before("<div>Row6</div>");
+// $(".container").before("<div>Row7</div>");
+// $(".container").after("<div>Row8</div>");
+// });
 
 
-//need to prepend to div
-// $('<div>').append('<div>').text(rowhere)
-// $('<div>').attr(classhere)
-// .prependTo('#container')
 
 // function addElement(div) {
 //     var d = document.querySelector(div);
