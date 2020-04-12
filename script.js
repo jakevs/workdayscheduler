@@ -1,15 +1,4 @@
-// $(function() {
-// var Time = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
-// var displayTime = document.getElementById('currentDay');
-// document.displayTime.innerHTML = Time
-// console.log(Time);
-// });
-
-// var date = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
-// $('#currentDay').append($('<p>').html);
-
-// $(document).ready(function() {};  <- will need this
-
+//Date from moment.js
 var time = moment().format("dddd, MMMM Do YYYY, h:mm:ss p");
 var displayTime = document.getElementById("currentDay");
 displayTime.textContent = time
@@ -26,7 +15,15 @@ $(".saveBtn").click(function(){
 
 })
 
-$(".task").val(localStorage.getItem("nineAm"));
+$("#nineAm .task").val(localStorage.getItem("nineAm"));
+$("#tenAm .task").val(localStorage.getItem("tenAm"));
+$("#elevenAm .task").val(localStorage.getItem("elevenAm"));
+$("#noonPm .task").val(localStorage.getItem("noonPm"));
+$("#onePm .task").val(localStorage.getItem("onePm"));
+$("#twoPm .task").val(localStorage.getItem("twoPm"));
+$("#threePm .task").val(localStorage.getItem("threePm"));
+$("#fourPm .task").val(localStorage.getItem("fourPm"));
+$("#fivePm .task").val(localStorage.getItem("fivePm"));
 
 // function putDiv() {
 //     var div1 = $("<div></div>").text("row");
