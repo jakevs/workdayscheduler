@@ -1,6 +1,4 @@
-// $('#currentDay').innerHTML.moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
-
-// (function() {
+// $(function() {
 // var Time = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
 // var displayTime = document.getElementById('currentDay');
 // document.displayTime.innerHTML = Time
