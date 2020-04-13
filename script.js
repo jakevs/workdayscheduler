@@ -48,6 +48,11 @@ displayTime.textContent = time
 
 });
 
+//Pseudo Code
+//Put everything into one function, be aware of scope
+//Use moment.js to get time and date
+//Save button will save to local storage
+//If/else statements for block colors, maybe a loop
 
 // function putDiv() {
 //     var div1 = $("<div></div>").text("row");
@@ -84,13 +89,3 @@ displayTime.textContent = time
 
 
 
-// function addElement(div) {
-//     var d = document.querySelector(div);
-//     var newElement = document.createElement(p)
-// }
-
-// var newDiv = document.createElement("div");
-// newDiv.textContent = "A pleasure to meet you!";
-// targetDiv.appendChild(newDiv);
-// newDiv.setAttribute("class", "fancy");
-// console.log(newDiv);
