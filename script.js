@@ -1,50 +1,50 @@
-$(function() {
+$(function () {
 
-$(".saveBtn").click(function(){
-    var time = $(this).parent().attr("id"); //target the hour box
-    var value = $(this).siblings(".task").val(); //target the text box
+    $(".saveBtn").click(function () {
+        var time = $(this).parent().attr("id"); //target the hour box
+        var value = $(this).siblings(".task").val(); //target the text box
 
-    localStorage.setItem(time, value);
+        localStorage.setItem(time, value);
 
-});
+    });
 
-function hourColor() {
-    var hourNow = moment().hours();
+    function hourColor() {
+        var hourNow = moment().hours();
 
-    $(".time-block").each(function() {
-        var hourBlock = parseInt($(this).attr("id").split("-")[1]);
-        
-        if (hourBlock < hourNow) {
-            $(this).addClass("past");
-        }
-        else if (hourBlock === hourNow) {
-            $(this).removeClass("past");
-            $(this).addClass("present");
-        }
-        else {
-            $(this).removeClass("past");
-            $(this).removeClass("present");
-            $(this).addClass("future");
-        }
-    })
-};
+        $(".time-block").each(function () {
+            var hourBlock = parseInt($(this).attr("id").split("-")[1]);
 
-hourColor();
+            if (hourBlock < hourNow) {
+                $(this).addClass("past");
+            }
+            else if (hourBlock === hourNow) {
+                $(this).removeClass("past");
+                $(this).addClass("present");
+            }
+            else {
+                $(this).removeClass("past");
+                $(this).removeClass("present");
+                $(this).addClass("future");
+            }
+        })
+    };
 
-$("#nineAm .task").val(localStorage.getItem("nineAm"));
-$("#tenAm .task").val(localStorage.getItem("tenAm"));
-$("#elevenAm .task").val(localStorage.getItem("elevenAm"));
-$("#noonPm .task").val(localStorage.getItem("noonPm"));
-$("#onePm .task").val(localStorage.getItem("onePm"));
-$("#twoPm .task").val(localStorage.getItem("twoPm"));
-$("#threePm .task").val(localStorage.getItem("threePm"));
-$("#fourPm .task").val(localStorage.getItem("fourPm"));
-$("#fivePm .task").val(localStorage.getItem("fivePm"));
+    hourColor();
 
-//Date from moment.js
-var time = moment().format("dddd, MMMM Do YYYY, h:mm:ss p");
-var displayTime = document.getElementById("currentDay");
-displayTime.textContent = time
+    $("#nineAm .task").val(localStorage.getItem("nineAm"));
+    $("#tenAm .task").val(localStorage.getItem("tenAm"));
+    $("#elevenAm .task").val(localStorage.getItem("elevenAm"));
+    $("#noonPm .task").val(localStorage.getItem("noonPm"));
+    $("#onePm .task").val(localStorage.getItem("onePm"));
+    $("#twoPm .task").val(localStorage.getItem("twoPm"));
+    $("#threePm .task").val(localStorage.getItem("threePm"));
+    $("#fourPm .task").val(localStorage.getItem("fourPm"));
+    $("#fivePm .task").val(localStorage.getItem("fivePm"));
+
+    //Date from moment.js
+    var time = moment().format("dddd, MMMM Do YYYY, h:mm:ss p");
+    var displayTime = document.getElementById("currentDay");
+    displayTime.textContent = time
 
 });
 
