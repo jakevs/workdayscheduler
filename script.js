@@ -1,11 +1,4 @@
-//Date from moment.js
-var time = moment().format("dddd, MMMM Do YYYY, h:mm:ss p");
-var displayTime = document.getElementById("currentDay");
-displayTime.textContent = time
-
 $(function() {
-});
-
 
 $(".saveBtn").click(function(){
     var time = $(this).parent().attr("id"); //target the hour box
@@ -13,7 +6,30 @@ $(".saveBtn").click(function(){
 
     localStorage.setItem(time, value);
 
-})
+});
+
+function hourColor() {
+    var hourNow = moment().hours();
+
+    $(".time-block").each(function() {
+        var hourBlock = parseInt($(this).attr("id").split("-")[1]);
+        
+        if (hourBlock < hourNow) {
+            $(this).addClass("past");
+        }
+        else if (hourBlock === hourNow) {
+            $(this).removeClass("past");
+            $(this).addClass("present");
+        }
+        else {
+            $(this).removeClass("past");
+            $(this).removeClass("present");
+            $(this).addClass("future");
+        }
+    })
+};
+
+hourColor();
 
 $("#nineAm .task").val(localStorage.getItem("nineAm"));
 $("#tenAm .task").val(localStorage.getItem("tenAm"));
@@ -24,6 +40,14 @@ $("#twoPm .task").val(localStorage.getItem("twoPm"));
 $("#threePm .task").val(localStorage.getItem("threePm"));
 $("#fourPm .task").val(localStorage.getItem("fourPm"));
 $("#fivePm .task").val(localStorage.getItem("fivePm"));
+
+//Date from moment.js
+var time = moment().format("dddd, MMMM Do YYYY, h:mm:ss p");
+var displayTime = document.getElementById("currentDay");
+displayTime.textContent = time
+
+});
+
 
 // function putDiv() {
 //     var div1 = $("<div></div>").text("row");
@@ -43,11 +67,7 @@ $("#fivePm .task").val(localStorage.getItem("fivePm"));
 //     $("div1").after(txt10, txt11, txt12, txt1, txt2, txt3, txt4, txt5);
 // });   
 
-
 // localStorage.setItem("user", JSON.stringify(user));
-
-
-
 
 // $(".container").before("<div>Row1</div>");
 //     $("div").attr("class", "hour");
