@@ -13,7 +13,8 @@ $(function () {
 
         $(".time-block").each(function () {
             var hourBlock = parseInt($(this).attr("id").split("-")[1]);
-
+            console.log(hourBlock);
+            console.log(hourNow);
             if (hourBlock < hourNow) {
                 $(this).addClass("past");
             }
@@ -31,15 +32,15 @@ $(function () {
 
     hourColor();
 
-    $("#nineAm .task").val(localStorage.getItem("nineAm"));
-    $("#tenAm .task").val(localStorage.getItem("tenAm"));
-    $("#elevenAm .task").val(localStorage.getItem("elevenAm"));
-    $("#noonPm .task").val(localStorage.getItem("noonPm"));
-    $("#onePm .task").val(localStorage.getItem("onePm"));
-    $("#twoPm .task").val(localStorage.getItem("twoPm"));
-    $("#threePm .task").val(localStorage.getItem("threePm"));
-    $("#fourPm .task").val(localStorage.getItem("fourPm"));
-    $("#fivePm .task").val(localStorage.getItem("fivePm"));
+    $("#hour-9 .task").val(localStorage.getItem("hour-9"));
+    $("#hour-10 .task").val(localStorage.getItem("hour-10"));
+    $("#hour-11 .task").val(localStorage.getItem("hour-11"));
+    $("#hour-12 .task").val(localStorage.getItem("hour-12"));
+    $("#hour-13 .task").val(localStorage.getItem("hour-13"));
+    $("#hour-14 .task").val(localStorage.getItem("hour-14"));
+    $("#hour-15 .task").val(localStorage.getItem("hour-15"));
+    $("#hour-16 .task").val(localStorage.getItem("hour-16"));
+    $("#hour-17 .task").val(localStorage.getItem("hour-17"));
 
     //Date from moment.js
     var time = moment().format("dddd, MMMM Do YYYY, h:mm:ss p");
